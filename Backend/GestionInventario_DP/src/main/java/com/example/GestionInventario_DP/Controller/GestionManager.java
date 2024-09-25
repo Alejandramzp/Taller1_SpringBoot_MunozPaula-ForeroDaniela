@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://127.0.0.1:5500")//Conectar con servidor de liveServer
 public class GestionManager {
 
     @Autowired
