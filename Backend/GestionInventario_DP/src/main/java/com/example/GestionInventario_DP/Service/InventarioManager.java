@@ -39,7 +39,7 @@ public class InventarioManager {
         Item item = itemRepository.findById(id).orElseThrow();
         item.setNombre(itemDetalles.getNombre());
         item.setDescripcion((itemDetalles.getDescripcion()));
-        item.setProovedor(itemDetalles.getProovedor());
+        item.setProveedor(itemDetalles.getProveedor());
         item.setId_categoria(itemDetalles.getId_categoria());
         item.setPrecio(itemDetalles.getPrecio());
         item.setImagen(itemDetalles.getImagen());

@@ -11,9 +11,9 @@ public class Item {
 
     private String nombre;
     private String descripcion;
-    private String proovedor;
+    private String proveedor;
     private int id_categoria;
-    private double precio;
+    private float precio;
     private String imagen;
 
     public Item() {
@@ -37,11 +37,11 @@ public class Item {
         this.descripcion = descripcion;
     }
 
-    public String getProovedor() {
-        return proovedor;
+    public String getProveedor() {
+        return proveedor;
     }
-    public void setProovedor(String proovedor) {
-        this.proovedor = proovedor;
+    public void setProveedor(String proveedor) {
+        this.proveedor = proveedor;
     }
 
     public int getId_categoria() {
@@ -51,10 +51,10 @@ public class Item {
         this.id_categoria = id_categoria;
     }
 
-    public double getPrecio() {
+    public float getPrecio() {
         return precio;
     }
-    public void setPrecio(double precio) {
+    public void setPrecio(float precio) {
         this.precio = precio;
     }
 
