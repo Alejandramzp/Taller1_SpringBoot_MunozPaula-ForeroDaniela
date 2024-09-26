@@ -1,8 +1,6 @@
-let items=[];
-
 function fetchApi(){
     let xhr = new XMLHttpRequest();
-    let url = "http://172.16.103.20:8080/api/items"
+    let url = "http://172.16.100.111:8080/api/items"
     xhr.open("GET",url,true);
     xhr.onreadystatechange = function(){
         if(this.readyState === 4 && this.status === 200){
@@ -18,7 +16,7 @@ function fetchApi(){
 
 function add_carousel() {
     let xhr = new XMLHttpRequest();
-    let url = "http://172.16.103.20:8080/api/items";
+    let url = "http://172.16.100.111:8080/api/items";
     xhr.open("GET", url, true);
     xhr.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -36,7 +34,7 @@ function add_carousel() {
             response.forEach((element, i) => {
                 // Create carousel item
                 let divContainer = document.createElement("div");
-                divContainer.className = `carousel-item ${i === 0 ? 'active' : ''}`; // Only first item is active
+                divContainer.className = `carousel-item ${i === 0 ? 'active' : ''}`;
                 divContainer.setAttribute("data-bs-interval", "10000");
                 if (element.descripcion==null || element.descripcion==""){
                     divContainer.innerHTML = `
@@ -49,7 +47,8 @@ function add_carousel() {
                     `;
                 }else{
                     divContainer.innerHTML = `
-                    <img src="${element.imagen}" class="d-block w-100" alt="${element.nombre}">
+                    <img src="${element.imagen}" class="d-block w-90" alt="${element.nombre}" width="800" height="400">
+                    
                     <div class="carousel-caption d-none d-md-block">
                         <h5>${element.nombre}</h5>
                         <p>${element.descripcion}</p>
@@ -62,10 +61,10 @@ function add_carousel() {
                 // Create carousel indicator button
                 let newButton = document.createElement("button");
                 newButton.type = "button";
-                newButton.setAttribute("data-bs-target", "#carouselExampleDark"); // Ensure this matches the carousel ID
+                newButton.setAttribute("data-bs-target", "#carouselExampleDark");
                 newButton.setAttribute("data-bs-slide-to", `${i}`);
                 newButton.setAttribute("aria-label", `Slide ${i + 1}`);
-                newButton.className = `${i === 0 ? 'active' : ''}`; // Only first button is active
+                newButton.className = `${i === 0 ? 'active' : ''}`;
 
                 buttonCar.appendChild(newButton);
             });
